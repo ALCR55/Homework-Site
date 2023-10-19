@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ТехноБард</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #800080, #0000FF, #000000);
+            color: #FFFFFF;
+            font-family: Arial, sans-serif;
+        }
+        .product {
+            background: linear-gradient(to right, #0000FF, #000000);
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #search {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+        }
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #0000FF;
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <h1>ТехноБард</h1>
+    <p>Технологии будущего в ваших руках</p>
+
+    <input type="text" id="search" placeholder="Поиск по названию">
+    <button onclick="search()">Поиск</button>
+
+    <div class="product" data-name="Смартфон FuturaPhone">
+        <h2>Смартфон FuturaPhone</h2>
+        <p>Смартфон с 8-ядерным процессором и 12 ГБ оперативной памяти. Идеально подходит для многозадачности.</p>
+        <p>⭐⭐⭐⭐⭐ "Лучший смартфон, который я когда-либо использовал!" - Иван</p>
+    </div>
+
+    <div class="product" data-name="Планшет TabMax">
+        <h2>Планшет TabMax</h2>
+        <p>Мощный планшет с большим дисплеем. Идеален для чтения, просмотра видео и игр.</p>
+        <p>⭐⭐⭐⭐ "Отличный планшет для всей семьи!" - Сергей</p>
+    </div>
+
+    <div class="product" data-name="Умные часы SmartTime">
+        <h2>Умные часы SmartTime</h2>
+        <p>Умные часы с широким набором функций для здоровья и фитнеса.</p>
+        <p>⭐⭐⭐⭐ "Лучшие умные часы для занятий спортом!" - Екатерина</p>
+    </div>
+
+    <div class="product" data-name="Беспроводные наушники AirDots">
+        <h2>Беспроводные наушники AirDots</h2>
+        <p>Беспроводные наушники с отличным качеством звука и долгим временем работы от аккумулятора.</p>
+        <p>⭐⭐⭐⭐ "Отличные наушники для музыки и звонков!" - Анастасия</p>
+    </div>
+
+    <!-- Конец новых товаров -->
+
+    <script>
+        function search() {
+            var input = document.getElementById('search');
+            var filter = input.value.toUpperCase();
+            var products = document.getElementsByClassName('product');
+
+            for (var i = 0; i < products.length; i++) {
+                var name = products[i].getAttribute('data-name');
+                if (name.toUpperCase().indexOf(filter) > -1) {
+                    products[i].style.display = '';
+                } else {
+                    products[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
